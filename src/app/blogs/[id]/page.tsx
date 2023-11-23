@@ -9,6 +9,7 @@ interface BlogDetailPageProps {
   };
 }
 const BlogDetailPage: FC<BlogDetailPageProps> = async ({ params }) => {
+  // 从数据库找数据
   const post = await prisma.post.findFirst({
     where: {
       id: params.id,

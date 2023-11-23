@@ -41,6 +41,12 @@ const FormNewPost = () => {
     } catch (error) {
       console.error(error);
     }
+  //   console.log(formData); 
+  //   {
+  //     "title": "123",
+  //     "content": "444"
+  //    }
+    
   };
 
   return (
@@ -55,6 +61,7 @@ const FormNewPost = () => {
           onChange={handleChange}
         />
       </div>
+      {/* 输入框 */}
       <div className='mb-4'>
         <ReactTextareaAutosize
           minRows={5}
@@ -65,7 +72,9 @@ const FormNewPost = () => {
           onChange={handleChange}
         />
       </div>
+      {/* 提交按钮 */}
       <button
+      // 如果没登录禁止提交
         disabled={!data?.user?.email}
         type='submit'
         className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full disabled:bg-gray-400'

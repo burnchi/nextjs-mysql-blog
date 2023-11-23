@@ -2,6 +2,7 @@ import prisma from '@/lib/db';
 import Link from 'next/link';
 
 const BlogsPage = async () => {
+  // 从数据库找数据
   const posts = await prisma.post.findMany({
     orderBy: {
       createdAt: 'desc',

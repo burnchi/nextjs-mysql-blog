@@ -18,6 +18,7 @@ const FormComment: FC<FormCommentProps> = ({ postId }) => {
   };
 
   const handleSubmitComment = async () => {
+    // 使用提交数据API
     if (comment.trim() !== '') {
       try {
         const newComment = await axios.post('/api/comments', {
